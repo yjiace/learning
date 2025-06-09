@@ -1,7 +1,10 @@
 # Spring WebFlux 中的 @HttpExchange 注解
 
 ## 课程目标与概述
-本次课程将介绍 Spring WebFlux 中的 `@HttpExchange` 注解，这是一种用于构建声明式 HTTP 客户端的新特性。通过使用 `@HttpExchange`，开发者可以更轻松地定义和调用 HTTP 服务接口，从而减少样板代码并提高开发效率。
+
+随着人工智能技术的迅猛发展，`Server-Sent Events (SSE)` 协议也日益受到关注。然而，在传统的`Spring Boot`项目中实现SSE协议通常会面临诸多挑战，过程相对复杂。相较之下，`Spring WebFlux` 引入的 `@HttpExchange` 注解，极大地简化了在响应式编程框架中实现SSE协议的复杂度。
+
+本次课程将深入探讨 `Spring WebFlux` 中的 `@HttpExchange` 注解。作为一项用于构建声明式 HTTP 客户端的全新特性，`@HttpExchange` 使得开发者能够以更便捷、更直观的方式定义和调用 HTTP 服务接口。它不仅能显著减少冗余的样板代码，更能有效提升开发效率，让 HTTP 服务调用变得更加优雅。
 
 ### 课程目标
 - 理解 `@HttpExchange` 的基本概念和用途
@@ -395,4 +398,4 @@ public interface OrderServiceClient {
 | **安全整合** | Spring Security (基于 Servlet) | Spring Security (基于 Reactive) | 两者都可与 Spring Security 集成，但 WebFlux 版本是为响应式栈设计的。 |
 | **事件处理** | ApplicationEventPublisher (同步或异步) | ApplicationEventPublisher (WebFlux 中常结合 `Mono`/`Flux` 处理异步事件) | 概念相似，但 WebFlux 更强调异步流式处理。 |
 
-
+> 示例代码：https://github.com/yjiace/learning/tree/master/webFlux
