@@ -1,4 +1,4 @@
-package cn.smallyoung.webflux.base;
+package cn.smallyoung.webflux.dify;
 
 
 import org.springframework.context.annotation.Bean;
@@ -9,21 +9,16 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
 /**
  * @author smallyoung
- * @date 2025/6/4
+ * @date 2025/6/9
  */
 @Configuration
-public class BaseWebConfig {
+public class DifyConfig {
 
     @Bean
-    public WebClient webClient() {
-        return WebClient.builder().build();
-    }
-
-    @Bean
-    public BaseUserClient userClient(WebClient webClient) {
+    public DifyClient difyClient() {
         HttpServiceProxyFactory httpServiceProxyFactory = HttpServiceProxyFactory
-                .builderFor(WebClientAdapter.create(webClient)).build();
-        return httpServiceProxyFactory.createClient(BaseUserClient.class);
+                .builderFor(WebClientAdapter.create(WebClient.builder().build())).build();
+        return httpServiceProxyFactory.createClient(DifyClient.class);
     }
 
 }

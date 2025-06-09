@@ -1,7 +1,6 @@
 package cn.smallyoung.webflux.dify;
 
 import com.alibaba.fastjson2.JSONObject;
-import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.service.annotation.DeleteExchange;
@@ -26,9 +25,8 @@ public interface DifyClient {
      * @param request       请求体
      * @return 响应
      */
-    @PostExchange("chat-messages")
-    Flux<JSONObject> chatMessages(@RequestHeader(name = "Authorization") String authorization,
-                                  @RequestBody JSONObject request);
+    @PostExchange("/chat-messages")
+    Flux<JSONObject> chatMessages(@RequestHeader(name = "Authorization") String authorization, @RequestBody JSONObject request);
 
     /**
      * 上传文件
@@ -146,55 +144,7 @@ public interface DifyClient {
 
 
     /**
-     * 语音转文字
-     *
-     * @param authorization 鉴权的api-key
-     * @param user          用户标识
-     * @param file          文件
-     * @return 响应
-     */
-    @PostExchange("audio-to-text")
-    Mono<JSONObject> audioToText(@RequestHeader(name = "Authorization") String authorization,
-                                 @RequestParam(required = false) String user,
-                                 @RequestPart MultipartFile file);
-
-
-    /**
-     * 文字转语音
-     *
-     * @param authorization 鉴权的api-key
-     * @param request       请求参数
-     * @return 响应
-     */
-    @PostExchange("text-to-audio")
-    Mono<HttpHeaders> textToAudio(@RequestHeader(name = "Authorization") String authorization,
-                                  @RequestBody JSONObject request);
-
-
-    /**
-     * 获取应用配置信息
-     *
-     * @param authorization 鉴权的api-key
-     * @param user          用户标识
-     * @return 响应
-     */
-    @GetExchange("parameters")
-    Mono<JSONObject> parameters(@RequestHeader(name = "Authorization") String authorization,
-                                @RequestParam(name = "user") String user);
-
-    /**
-     * 获取应用Meta信息,用于获取工具icon
-     *
-     * @param authorization 鉴权的api-key
-     * @param user          用户标识
-     * @return 响应
-     */
-    @GetExchange("meta")
-    Mono<JSONObject> meta(@RequestHeader(name = "Authorization") String authorization,
-                          @RequestParam(name = "user") String user);
-
-    /**
-     * 获取流式workflow结果
+     * 执行 workflow
      *
      * @param authorization 鉴权的api-key
      * @param request       请求参数
@@ -223,7 +173,7 @@ public interface DifyClient {
      * @param request       请求参数
      * @return 响应
      */
-    @PostMapping("workflows/tasks/{taskId}/stop")
+    @PostExchange("workflows/tasks/{taskId}/stop")
     Mono<JSONObject> workflowsStop(@RequestHeader(name = "Authorization") String authorization,
                                    @PathVariable String taskId, @RequestBody JSONObject request);
 

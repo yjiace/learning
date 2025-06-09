@@ -16,7 +16,7 @@ import java.util.List;
  * @date 2025/6/4
  */
 
-@HttpExchange(url = "/users", accept = "application/json", contentType = "application/json")
+@HttpExchange(url = "https://jsonplaceholder.typicode.com/users", accept = "application/json", contentType = "application/json")
 public interface BaseUserClient {
 
     // 方法级别：继承类级别设置，并定义具体路径
