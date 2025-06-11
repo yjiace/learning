@@ -4,7 +4,7 @@
 
 随着人工智能技术的迅猛发展，`Server-Sent Events (SSE)` 协议也日益受到关注。然而，在传统的`Spring Boot`项目中实现SSE协议通常会面临诸多挑战，过程相对复杂。相较之下，`Spring WebFlux` 引入的 `@HttpExchange` 注解，极大地简化了在响应式编程框架中实现SSE协议的复杂度。
 
-本次课程将深入探讨 `Spring WebFlux` 中的 `@HttpExchange` 注解。作为一项用于构建声明式 HTTP 客户端的全新特性，`@HttpExchange` 使得开发者能够以更便捷、更直观的方式定义和调用 HTTP 服务接口。它不仅能显著减少冗余的样板代码，更能有效提升开发效率，让 HTTP 服务调用变得更加优雅。
+本次课程将深入探讨 `Spring WebFlux` 中的 `@HttpExchange` 注解。作为一项用于构建`声明式 HTTP 客户端`的全新特性，`@HttpExchange` 使得开发者能够以更便捷、更直观的方式定义和调用 HTTP 服务接口。它不仅能显著减少冗余的样板代码，更能有效提升开发效率，让 HTTP 服务调用变得更加优雅。
 
 ### 课程目标
 - 理解 `@HttpExchange` 的基本概念和用途
@@ -15,7 +15,7 @@
 - 学习如何在 `@HttpExchange` 方法中处理不同类型的请求参数和响应类型。
 
 ## @HttpExchange 注解简介
-`@HttpExchange` 是 Spring Framework 6 提供的一个声明式 HTTP 客户端注解，旨在简化 HTTP 服务的调用。它允许开发者通过 Java 接口定义 HTTP 请求，并由框架自动生成实现代码。
+`@HttpExchange` 是 Spring Framework 6 提供的一个`声明式 HTTP 客户端`注解，旨在简化 HTTP 服务的调用。它允许开发者通过 Java 接口定义 HTTP 请求，并由框架自动生成实现代码。
 
 ### 主要特性
 - **声明式编程**：通过注解定义 HTTP 请求，减少样板代码

@@ -35,6 +35,7 @@
 
         <fastjson2.version>2.0.52</fastjson2.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
